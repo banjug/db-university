@@ -15,7 +15,7 @@
 4. Selezionare tutti i corsi che non hanno un sito web (cercare operatore NULL/NOT NULL)
     SELECT *
     FROM courses 
-    WHERE website IS NOT NULL
+    WHERE website IS NULL
 
 5. Selezionare tutti gli insegnanti che hanno un numero di telefono (cercare operatore NULL/NOT NULL)
     SELECT *
