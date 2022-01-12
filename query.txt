@@ -30,3 +30,6 @@
 7. Qual è il numero totale degli studenti iscritti?
     SELECT COUNT(id) 
     FROM students
+
+    SELECT COUNT(*) 
+    FROM students
