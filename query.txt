@@ -1,0 +1,20 @@
+1. Selezionare tutti gli insegnanti
+
+
+2. Selezionare tutti gli studenti il cui nome inizia per "E" (cercare operatori wildecard)
+
+
+3. Selezionare tutti gli studenti che si sono iscritti nel 2021
+
+
+4. Selezionare tutti i corsi che non hanno un sito web (cercare operatore NULL/NOT NULL)
+
+
+5. Selezionare tutti gli insegnanti che hanno un numero di telefono (cercare operatore NULL/NOT NULL)
+
+
+6. Selezionare tutti gli appelli d'esame dei mesi di giugno e luglio 2020
+
+
+7. Qual è il numero totale degli studenti iscritti?
+
