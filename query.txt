@@ -11,25 +11,43 @@
     SELECT *
     FROM students
     WHERE enrolment_date  LIKE '2021%'
+        oppure
+    WHERE YEAR(enrolment_date) = 2021
+        oppure
+    WHERE enrolment_date >= '2021-01-01' AND enrolment_date <= '2021-12-31'
+        oppure
+    WHERE enrolment_date BETWEEN '2021-01-01' AND enrolment_date '2021-12-31'
 
 4. Selezionare tutti i corsi che non hanno un sito web (cercare operatore NULL/NOT NULL)
     SELECT *
     FROM courses 
     WHERE website IS NULL
+        oppure
+    WHERE website = NULL
 
 5. Selezionare tutti gli insegnanti che hanno un numero di telefono (cercare operatore NULL/NOT NULL)
     SELECT *
     FROM teachers 
     WHERE phone IS NOT NULL
+        oppure
+    WHERE phone <> NULL
 
 6. Selezionare tutti gli appelli d'esame dei mesi di giugno e luglio 2020
     SELECT * 
     FROM exams 
     WHERE date LIKE '2020-06%' OR date LIKE '2020-07%' 
+        oppure
+    WHERE date BETWEEN '2020-06-01' AND '2020-07-31' \\ è rischioso nel caso di un anno bisestile
+        oppure
+    WHERE YEAR(date) = 2020
+    AND (MONTH(date) = 6 OR MONTH(date) = 7)
+        oppure
+    WHERE YEAR(date) = 2020
+    AND MONTH(date) IN (6,7)
 
 7. Qual è il numero totale degli studenti iscritti?
     SELECT COUNT(id) 
     FROM students
-
+    oppure
     SELECT COUNT(*) 
     FROM students
