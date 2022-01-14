@@ -95,3 +95,13 @@ JOIN
     ORDER BY teachers.id
 
 7. BONUS: Selezionare per ogni studente quanti tentativi d'esame ha sostenuto per superare ciascuno dei suoi esami
+    SELECT students.id, students.name, students.surname, courses.name as 'course name', COUNT(courses.id) as 'attempts'
+    FROM students
+        JOIN exam_student
+        ON exam_student.student_id = students.id
+            JOIN exams
+            ON exams.id = exam_student.exam_id
+                JOIN courses
+                on courses.id = exams.course_id //unisce le tabelle degli studenti, dei voti, degli esami e dei corsi
+        WHERE exam_student.vote <18 //seleziona solo i tentativi prima della sufficienza
+    GROUP BY students.id, students.name, students.surname, courses.id //raggruppa il singolo studente e poi raggruppa i tentativi per singolo corso
